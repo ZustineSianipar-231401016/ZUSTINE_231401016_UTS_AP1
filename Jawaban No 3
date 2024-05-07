@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    for (int i = 2; i * i <= num; ++i) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    long long angka;
+    cout << "Masukkan angka: ";
+    cin >> angka;
+
+    int jumlah_prima = 0;
+    long long temp = angka;
+    while (temp > 0) {
+        int digit = temp % 10;
+        if (isPrime(digit)) {
+            jumlah_prima += digit;
+        }
+        temp /= 10;
+    }
+
+    cout << "Jumlah angka prima dalam angka tersebut: " << jumlah_prima << endl;
+
+    return 0;
+}
