@@ -1,0 +1,30 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int detik;
+    cout << "Masukkan waktu dalam detik: ";
+    cin >> detik;
+
+    if (detik < 0) {
+        cout << "Input tidak valid" << endl;
+        return 1;
+    }
+
+    int jam = detik / 3600;
+    detik %= 3600;
+    int menit = detik / 60;
+    detik %= 60;
+
+    cout << "Waktu dalam format HH:MM:SS: ";
+    if (jam < 10) cout << "0";
+    cout << jam << ":";
+    if (menit < 10) cout << "0";
+    cout << menit << ":";
+    if (detik < 10) cout << "0";
+    cout << detik << endl;
+
+    return 0;
+}
